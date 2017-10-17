@@ -1,5 +1,3 @@
-# Calculator
-
 Java Project
 Design :
 	1. Two Maven Java Projects
