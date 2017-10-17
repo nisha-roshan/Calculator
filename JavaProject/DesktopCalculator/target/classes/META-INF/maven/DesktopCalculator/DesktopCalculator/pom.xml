@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>DesktopCalculator</groupId>
+  <artifactId>DesktopCalculator</artifactId>
+  <version>0.1</version>
+  <dependencies>
+        <dependency>
+            <groupId>CalculatorService</groupId>
+            <artifactId>CalculatorService</artifactId>
+            <version>0.1</version>  
+             <scope>compile</scope>    
+        </dependency>
+         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+  <build>
+   <plugins>
+    <!-- 
+    <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+     -->
+     
+     
+      <plugin>
+      <!-- Build an executable JAR -->
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>2.4</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+          <mainClass>au.com.nab.desktopcalculator.client.DesktopCalculatorClient</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+
+      <!-- including dependencies in the executable jar -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+      
+         <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        
+         
+          <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+          <mainClass>au.com.nab.desktopcalculator.client.DesktopCalculatorClient</mainClass>
+          </manifest>
+        </archive>
+        </configuration>
+      </plugin>
+    
+    </plugins>
+  </build>
+</project>

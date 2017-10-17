@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: DesktopCalculator
+Implementation-Version: 0.1
+Implementation-Vendor-Id: DesktopCalculator
+Class-Path: CalculatorService-0.1.jar
+Build-Jdk: 1.7.0
+Built-By: AADM182
+Created-By: Maven Integration for Eclipse
+Specification-Title: DesktopCalculator
+Specification-Version: 0.1
+Main-Class: au.com.nab.desktopcalculator.client.DesktopCalculatorClien
+ t
+
